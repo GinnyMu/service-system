@@ -5,6 +5,22 @@
   <title>馋猫客服系统</title>
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link href="chanmao.css" rel="stylesheet" type="text/css" />
+  <link href="chanmao-pop.css" rel="stylesheet" type="text/css" />
+  <script language="javascript">
+    function popUp(){
+      var vis = document.getElementById("res-pop");
+      vis.style.visibility = "visible";
+      document.getElementById("background").style.visibility = "visible";
+      document.getElementById("close").style.visibility = "visible";
+    }
+
+    function closePop(){
+      var vis = document.getElementById("res-pop");
+      vis.style.visibility = "hidden";
+      document.getElementById("background").style.visibility = "hidden";
+      document.getElementById("close").style.visibility = "hidden";
+    }
+   </script>
 </head>
 
 <body>
@@ -15,8 +31,13 @@
       <img alt="version" src="icon/version.png" height="30px" style="margin-left: 10px"/>
       <div id="time">
          <script type="text/javascript">
-          document.getElementById('time').innerHTML=new Date().toLocaleString();
-          setInterval("document.getElementByIdx_x('time').innerHTML=new Date().toLocaleString();",1000);
+         function update(){
+         var hour = new Date().getHours();
+         var minute = new Date().getMinutes();
+         var second = new Date().getSeconds();
+        document.getElementById('time').innerHTML= hour + ": " + minute + ": " + second;
+      }
+          setInterval(update,1000);
         </script>
       </div>
     </div>
@@ -34,39 +55,36 @@
   </div>
   <div class="content">
     <nav class="option">
-      <img alt="home" src="icon/icon-home.png" />
+      <img alt="home" src="icon/icon-home2.png" />
       <hr style="width: 25px; border:0.5px solid #7FACCD; margin: -15px"/>
       <img alt="restaurant" src="icon/icon-restaurant.png"/>
       <hr style="width: 25px; border:0.5px solid #7FACCD; margin: -15px"/>
-      <img alt="service" src="icon/icon-service.png"/>
+      <a href="service.html"><img alt="service" src="icon/icon-service2.png"/></a>
       <hr style="width: 25px; border:0.5px solid #7FACCD; margin: -15px"/>
-      <img alt="driver" src="icon/icon-driver.png" style="height:25px"/>
+      <a href="driver.html"><img alt="driver" src="icon/icon-driver2.png" style="height:25px"/></a>
     </nav>
     <div class="restaurant">
       <p>SEARCH RESTAUTANT</p>
       <hr style="width: 100%; border:0.5px solid #E5E5E5;"/>
       <div class="res-search">
-        <div class="res-name">
-            <div class="btn-group">
-                <a class="btn-res-name" href="javascript:;" data-toggle="dropdown" data-hover="dropdown" data-close-others="true"> Restaurant Name
-                    <i class="fa fa-angle-down"></i>
+        <div class="btn-res-group" onclick="document.getElementById('dropdown-menu').style.display='block';">
+                <a class="btn-res-name" data-toggle="dropdown" data-hover="dropdown"> Restaurant Name
+                    <i class="icon-angle"></i>
                 </a>
-                <!--<ul class="dropdown-menu pull-right">
+                <ul id="dropdown-menu" onmouseout="document.getElementById('dropdown-menu').style.display='none';">
                     <li>
-                        <a href="javascript:;"> Option 1</a>
-                    </li>
-                    <li class="divider"> </li>
-                    <li>
-                        <a href="javascript:;">Option 2</a>
+                        <a href=""> Option 1</a>
                     </li>
                     <li>
-                        <a href="javascript:;">Option 3</a>
+                        <a href="">Option 2</a>
                     </li>
                     <li>
-                        <a href="javascript:;">Option 4</a>
+                        <a href="">Option 3</a>
                     </li>
-                </ul>-->
-            </div>
+                    <li>
+                        <a href="">Option 4</a>
+                    </li>
+                </ul>
         </div>
         <form class="search-form" action=" " method="GET">
             <div class="input-group">
@@ -78,7 +96,7 @@
                 </span>
             </div>
         </form>
-        <button type="button" class="btn-clear">CLEAR</button>
+        <button type="button" class="r-btn-clear">CLEAR</button>
       </div>
 
       <div class="area">
@@ -113,7 +131,7 @@
                       <td> 3380 Midland Ave, Scarborough, M9U 8Y7 </td>
                       <td> 905540283 </td>
                       <td>12:00 ~ 22:00</td>
-                      <td><input type="image" class="table-edit" src="icon/icon-edit.png"/></td>
+                      <td><input type="image" class="table-edit" src="icon/icon-edit.png" onclick="popUp();"/></td>
                   </tr>
                   <tr>
                       <td> 6 </td>
@@ -168,4 +186,55 @@
       </div>
     </div>
   </div>
+
+<div id="background"></div>
+
+<div id="res-pop">
+  <p>半亩园(Scarborough)</p>
+  <hr style="width: 80%; border:0.5px solid #E5E5E5;"/>
+  <div class="time-title">
+    <p>开始关店时间</p>
+    <p style="margin-left: 200px;">结束关店时间</p>
+  </div>
+  <div class="time">
+    <img src="icon/icon-calendar.png"/>
+    <input type="text" class="start-time"/>
+    <img src="icon/icon-calendar2.png" style="margin-left: 80px;"/>
+    <input type="text" class="end-time"/>
+  </div>
+  <div class="res-pop-btn">
+    <button type="button" class="btn-add">Add</button>
+    <button type="button" class="btn-cancel">Cancel</button>
+  </div>
+  <div class="history">
+    <table class="time-table" cellspacing="0" cellpadding="0" >
+        <thead>
+            <tr>
+                <th> Start Time </th>
+                <th> End Time </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td> 2016-12-29 00:01:00 </td>
+                <td> 2016-12-29 00:02:00 </td>
+            </tr>
+            <tr>
+                <td> 2016-12-29 00:01:00 </td>
+                <td> 2016-12-29 00:02:00 </td>
+            </tr>
+            <tr>
+                <td> 2016-12-29 00:01:00 </td>
+                <td> 2016-12-29 00:02:00 </td>
+            </tr>
+        </tbody>
+    </table>
+  </div>
+
+</div>
+
+<div id="close">
+<input type="image" class="close-icon" src="icon/close.png" onclick="closePop();"/>
+</div>
+
 </body>
