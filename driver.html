@@ -80,26 +80,11 @@
     <div class="dri-content">
       <div class="dri-select">
         <div class="dri-name">
-          <div class="btn-group">
-              <a class="btn-res-name" href="javascript:;" data-toggle="dropdown" data-hover="dropdown" data-close-others="true"> 司机姓名
-                  <i class="fa fa-angle-down"></i>
-              </a>
-              <!--<ul class="dropdown-menu pull-right">
-                  <li>
-                      <a href="javascript:;"> Option 1</a>
-                  </li>
-                  <li class="divider"> </li>
-                  <li>
-                      <a href="javascript:;">Option 2</a>
-                  </li>
-                  <li>
-                      <a href="javascript:;">Option 3</a>
-                  </li>
-                  <li>
-                      <a href="javascript:;">Option 4</a>
-                  </li>
-              </ul>-->
-          </div>
+          <select class="btn-res-name">
+            <option value ="restaurant">restaurant</option>
+            <option value = "service">service</option>
+            <option value = "driver" selected="selected">driver</option>
+          </select>
           <form class="search-form" action=" " method="GET">
             <div class="input-group">
               <i class="icon-search"></i>
@@ -140,7 +125,7 @@
 
       </div>
 
-      <div class="new dri">
+      <div class="new">
         <input type="image" src="icon/icon-schedule.png" onclick="popDriTable();"/>
         <p>添加客服班表</p>
       </div>

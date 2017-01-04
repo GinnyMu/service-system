@@ -102,25 +102,6 @@
   margin: 20px 0 50px 0;
 }
 
-#dropdown-menu{
-  display: none;
-  width: 100px;
-  background-color: white;
-  box-shadow: 0 0 3px #e5e5e5;
-  position: absolute;;
-  z-index: 50;
-}
-
-.btn-res-group a{
-  text-decoration: none;
-}
-
-#dropdown-menu li{
-  list-style: none;
-  margin-top: 10px;
-  font-family: Myriad pro;
-}
-
 .input-group{
   left: auto;
   right: 0;
@@ -153,7 +134,7 @@
   margin: 0 5px 0 5px;
 }
 
-.btn-res-name{
+select{
   border-radius: 25px;
   display: inline-block;
   font-weight: 400;
@@ -163,15 +144,14 @@
   border: 1px solid transparent;
   white-space: nowrap;
   padding: 6px 12px;
-  font-size: 15px;
-  box-sizing: border-box;
+  font-size: 18px;
   background: 0 0;
   margin: 0 5px 0 5px;
   border-color: #3598dc;
   color: #3598dc;
   text-decoration: none;
   font-family: myriad pro;
-  margin: 0 5px 0 5px;
+  height: 30px;
 }
 
 .res-name{
@@ -341,7 +321,7 @@ button{
 }
 
 .new p{
-  font-size: 1em;
+  font-size: 19px;
   margin-bottom: 10px;
 }
 

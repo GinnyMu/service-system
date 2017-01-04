@@ -67,25 +67,11 @@
       <p>SEARCH RESTAUTANT</p>
       <hr style="width: 100%; border:0.5px solid #E5E5E5;"/>
       <div class="res-search">
-        <div class="btn-res-group" onclick="document.getElementById('dropdown-menu').style.display='block';">
-                <a class="btn-res-name" data-toggle="dropdown" data-hover="dropdown"> Restaurant Name
-                    <i class="icon-angle"></i>
-                </a>
-                <ul id="dropdown-menu" onmouseout="document.getElementById('dropdown-menu').style.display='none';">
-                    <li>
-                        <a href=""> Option 1</a>
-                    </li>
-                    <li>
-                        <a href="">Option 2</a>
-                    </li>
-                    <li>
-                        <a href="">Option 3</a>
-                    </li>
-                    <li>
-                        <a href="">Option 4</a>
-                    </li>
-                </ul>
-        </div>
+        <select class="btn-res-name">
+          <option value ="restaurant" selected="selected">restaurant</option>
+          <option value = "service">service</option>
+          <option value = "driver">driver</option>
+        </select>
         <form class="search-form" action=" " method="GET">
             <div class="input-group">
                 <i class="icon-search"></i>
